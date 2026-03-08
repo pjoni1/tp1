@@ -1,6 +1,6 @@
 package dam.exer_vl
 
-class Book (
+open class Book (
     val title : String,
     val author : String,
     val publicationYear : Int,
