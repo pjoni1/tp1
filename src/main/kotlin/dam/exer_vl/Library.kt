@@ -5,6 +5,7 @@ class Library {
 
     fun addBook(book: DigitalBook){
         books.add(book)
+        incrementCount()
     }
 
     fun borrowBook(title: String){
@@ -53,6 +54,17 @@ class Library {
         for (book in books) {
             println("-------------")
             println(book)
+        }
+    }
+
+    companion object{
+        var countBooksAdded = 0
+
+        fun incrementCount(){
+            countBooksAdded++
+        }
+        fun getTotalBooksCreated() : Int{
+            return countBooksAdded
         }
     }
 }
