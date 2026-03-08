@@ -35,4 +35,8 @@ open class Book (
             }
         }
 
+    override fun toString(): String {
+        return "Book(Title: '$title', Author: '$author', PublicationYear: $publicationYear, AvailableCopies: $availableCopies)"
+    }
+
 }

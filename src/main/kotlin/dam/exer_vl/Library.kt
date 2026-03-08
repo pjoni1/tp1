@@ -1,7 +1,7 @@
 package dam.exer_vl
 
 class Library {
-    val books = ArrayList<DigitalBook>()
+    val books = ArrayList<Book>()
 
     fun addBook(book: DigitalBook){
         books.add(book)
@@ -35,21 +35,24 @@ class Library {
     fun showBooks(){
         for (book in books){
             println("----------------")
-            println(book.title)
-            println(book.author)
-            println(book.publicationYear)
-            println(book.availableCopies)
-            println(book.fileSize)
-            println(book.format)
+            println("Title: ${book.title}")
+            println("Author: ${book.author}")
+            println("Year: ${book.publicationYear}")
+
+            if (book is DigitalBook) {
+                println("Size: ${book.fileSize}MB")
+                println("Format: ${book.format}")
+            }else if(book is PhysicalBook){
+                println("Weight: ${book.weight}MB")
+                println("Has hard cover: ${book.hasHardcover}")
+            }
         }
     }
 
     fun searchByAuthor(author: String){
-        for(book in books){
-            if (book.author == author){
-                println("--------------")
-                println(book.title)
-            }
+        for (book in books) {
+            println("-------------")
+            println(book)
         }
     }
 }
