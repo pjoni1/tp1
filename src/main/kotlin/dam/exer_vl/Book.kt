@@ -4,7 +4,7 @@ open class Book (
     val title : String,
     val author : String,
     val publicationYear : Int,
-    var avaiableCopies : Int
+    var availableCopies : Int
 
 ){
     init {
@@ -21,7 +21,7 @@ open class Book (
             }
         }
 
-    var availableCopies: Int = avaiableCopies
+    var availableCopiesSetter: Int = availableCopies
         get() = field //getter padrão
         set(value){
             if (value < 0){
